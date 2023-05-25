@@ -397,7 +397,7 @@ public class homeController implements Initializable {
         ch3=modGroup.getText();
         PreparedStatement pst = null;
         try {
-            pst = con.prepareStatement("INSERT INTO abonne (nom_prenom, speciality, grp) VALUES (?,?,?,?)");
+            pst = con.prepareStatement("INSERT INTO abonne (nom_prenom, speciality, grp) VALUES (?,?,?)");
             pst.setString(1, ch1);
             pst.setString(2, ch2);
             pst.setString(3, ch3);
@@ -651,19 +651,20 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        abonnetable();
+        livretable();
     }
 
     public void  addemp(){
         String ch1,ch2,ch3,ch4;
         int ch5;
-        ch1=modIdLivre.getText();
-        ch2=modIdAbn.getText();
+        ch1=modLivre.getText();
+        ch2=modAbn.getText();
         ch3=modEmprDteLim.getValue().toString();
         ch4=modEmprDteLim1.getValue().toString();
         ch5=modStatusCombo.getValue();
         PreparedStatement pst = null;
         try {
+
             pst = con.prepareStatement("INSERT INTO emprunts (idlivre, idab, dateemprt, datalimit, status) VALUES (?,?,?,?,?)");
             pst.setString(1, ch1);
             pst.setString(2, ch2);
@@ -674,7 +675,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        abonnetable();
+        emptable();
     }
 
     public void updateEmp()
