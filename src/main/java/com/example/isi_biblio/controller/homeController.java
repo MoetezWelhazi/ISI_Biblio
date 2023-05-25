@@ -262,7 +262,6 @@ public class homeController implements Initializable {
                     modLivre.setText(listEmprunts.getItems().get(myIndex).getTitre());
                     modAbn.setText(listEmprunts.getItems().get(myIndex).getNomPrenom());
                     modStatusCombo.setValue(listEmprunts.getItems().get(myIndex).getStatus());
-                    System.out.println(listEmprunts.getItems().get(myIndex).getDateEmp());
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                     LocalDate date_emp = LocalDate.parse(listEmprunts.getItems().get(myIndex).getDateEmp(), formatter);
                     modEmprDteLim.setValue(date_emp);
