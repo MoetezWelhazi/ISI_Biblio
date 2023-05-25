@@ -54,10 +54,10 @@ public class empModel {
         return nom_prenom.get();
     }
     public String getDateEmp() {
-        return dateEmp.get();
+        return String.valueOf(dateEmp.get());
     }
     public String getDateLimit() {
-        return dateLimit.get();
+        return String.valueOf(dateLimit.get());
     }
     public int getStatus() {return status.get();}
 }
