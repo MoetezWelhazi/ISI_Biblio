@@ -389,6 +389,24 @@ public class homeController implements Initializable {
 
     }
 
+    public void  addabonne(){
+        String ch1,ch2,ch3,ch4;
+        int ch5;
+        ch1=modNP.getText();
+        ch2=modSpec.getText();
+        ch3=modGroup.getText();
+        PreparedStatement pst = null;
+        try {
+            pst = con.prepareStatement("INSERT INTO abonne (nom_prenom, speciality, grp) VALUES (?,?,?,?)");
+            pst.setString(1, ch1);
+            pst.setString(2, ch2);
+            pst.setString(3, ch3);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        abonnetable();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -615,6 +633,49 @@ public class homeController implements Initializable {
         abonnetable();
     }
 
+    public void  addlivre(){
+        String ch1,ch2,ch3,ch4;
+        int ch5;
+        ch1=modTitre.getText();
+        ch2=modAuteur.getText();
+        ch3=modGenre.getText();
+        ch4=modQtt.getText();
+        PreparedStatement pst = null;
+        try {
+            pst = con.prepareStatement("INSERT INTO livre (titre, autheur, genre, quantite) VALUES (?,?,?,?)");
+            pst.setString(1, ch1);
+            pst.setString(2, ch2);
+            pst.setString(3, ch3);
+            pst.setString(4, ch4);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        abonnetable();
+    }
+
+    public void  addemp(){
+        String ch1,ch2,ch3,ch4;
+        int ch5;
+        ch1=modIdLivre.getText();
+        ch2=modIdAbn.getText();
+        ch3=modEmprDteLim.getValue().toString();
+        ch4=modEmprDteLim1.getValue().toString();
+        ch5=modStatusCombo.getValue();
+        PreparedStatement pst = null;
+        try {
+            pst = con.prepareStatement("INSERT INTO emprunts (idlivre, idab, dateemprt, datalimit, status) VALUES (?,?,?,?,?)");
+            pst.setString(1, ch1);
+            pst.setString(2, ch2);
+            pst.setString(3, ch3);
+            pst.setString(4, ch4);
+            pst.setInt(5, ch5);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        abonnetable();
+    }
 
     public void updateEmp()
     {
