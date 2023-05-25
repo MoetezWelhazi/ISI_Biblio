@@ -80,6 +80,62 @@
                   </Pane>
                </children>
             </Pane>
+            <Pane fx:id="paneLivres" layoutX="10.0" layoutY="10.0" prefHeight="492.0" prefWidth="564.0" style="-fx-background-color: white;">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="147.0" prefHeight="330.0" prefWidth="542.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button id="btnAjouterLiv" fx:id="optionsLivres" mnemonicParsing="false" onAction="#handleBtnActions" style="-fx-background-radius: 5;" styleClass="button1" text="Options">
+                           <font>
+                              <Font name="MarkPro-Bold" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="fas-cog" iconSize="15" selectionFill="BLACK" />
+                           </graphic>
+                        </Button>
+                        <TableView id="listLivres" fx:id="listLivres" prefHeight="267.0" prefWidth="542.0" style="-fx-background-color: transparent;" stylesheets="@../css/application.css" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn fx:id="idLivreClm" prefWidth="48.0" text="ID" />
+                              <TableColumn fx:id="TitreLivreClm" prefWidth="155.0" text="Titre" />
+                              <TableColumn fx:id="AuteurLivreClm" prefWidth="111.0" text="Auteur" />
+                              <TableColumn fx:id="GenreLivreClm" prefWidth="99.0" text="Genre" />
+                              <TableColumn fx:id="QuantitéLivreClm" prefWidth="115.0" text="Quantité" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="livresSearchField" maxWidth="226.0" prefHeight="25.0" prefWidth="226.0">
+                           <GridPane.margin>
+                              <Insets left="305.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <FontIcon iconLiteral="fas-search" iconSize="15">
+                           <GridPane.margin>
+                              <Insets left="290.0" />
+                           </GridPane.margin>
+                        </FontIcon>
+                     </children>
+                  </GridPane>
+                  <Pane layoutY="30.0" prefHeight="114.0" prefWidth="564.0" style="-fx-background-color: #18f2cd;">
+                     <children>
+                        <Text fill="WHITE" layoutX="37.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliothéque" wrappingWidth="202.93999481201172">
+                           <font>
+                              <Font name="MarkPro" size="32.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="35.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="home/Bibliothéque" wrappingWidth="179.93999481201172">
+                           <font>
+                              <Font name="MarkPro" size="19.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
             <Pane fx:id="paneEmprunts" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <GridPane layoutX="14.0" layoutY="147.0" prefHeight="330.0" prefWidth="542.0">
@@ -137,62 +193,6 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="paneLivres" layoutX="10.0" layoutY="10.0" prefHeight="492.0" prefWidth="564.0" style="-fx-background-color: white;">
-               <children>
-                  <GridPane layoutX="14.0" layoutY="147.0" prefHeight="330.0" prefWidth="542.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Button id="btnAjouterLiv" fx:id="optionsLivres" mnemonicParsing="false" onAction="#handleBtnActions" style="-fx-background-radius: 5;" styleClass="button1" text="Options">
-                           <font>
-                              <Font name="MarkPro-Bold" size="13.0" />
-                           </font>
-                           <graphic>
-                              <FontIcon iconColor="WHITE" iconLiteral="fas-cog" iconSize="15" selectionFill="BLACK" />
-                           </graphic>
-                        </Button>
-                        <TableView id="listLivres" fx:id="listLivres" prefHeight="267.0" prefWidth="542.0" style="-fx-background-color: transparent;" stylesheets="@../css/application.css" GridPane.rowIndex="1">
-                           <columns>
-                              <TableColumn fx:id="idLivreClm" prefWidth="48.0" text="ID" />
-                              <TableColumn fx:id="TitreLivreClm" prefWidth="155.0" text="Titre" />
-                              <TableColumn fx:id="AuteurLivreClm" prefWidth="111.0" text="Auteur" />
-                              <TableColumn fx:id="GenreLivreClm" prefWidth="99.0" text="Genre" />
-                              <TableColumn fx:id="QuantitéLivreClm" prefWidth="115.0" text="Quantité" />
-                           </columns>
-                        </TableView>
-                        <TextField fx:id="livresSearchField" maxWidth="226.0" prefHeight="25.0" prefWidth="226.0">
-                           <GridPane.margin>
-                              <Insets left="305.0" />
-                           </GridPane.margin>
-                        </TextField>
-                        <FontIcon iconLiteral="fas-search" iconSize="15">
-                           <GridPane.margin>
-                              <Insets left="290.0" />
-                           </GridPane.margin>
-                        </FontIcon>
-                     </children>
-                  </GridPane>
-                  <Pane layoutY="30.0" prefHeight="114.0" prefWidth="564.0" style="-fx-background-color: #18f2cd;">
-                     <children>
-                        <Text fill="WHITE" layoutX="37.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliothéque" wrappingWidth="202.93999481201172">
-                           <font>
-                              <Font name="MarkPro" size="32.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" layoutX="35.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="home/Bibliothéque" wrappingWidth="179.93999481201172">
-                           <font>
-                              <Font name="MarkPro" size="19.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
          </children>
       </StackPane>
       <StackPane prefHeight="499.0" prefWidth="193.0">
@@ -244,7 +244,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-plus" iconSize="26" />
                      </graphic>
                   </Button>
-                  <Button id="btnAjouterEmpr" fx:id="updEmprunt" layoutX="105.0" layoutY="441.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
+                  <Button id="btnAjouterEmpr" fx:id="updEmprunt" layoutX="105.0" layoutY="441.0" mnemonicParsing="false" onAction="#updateEmp" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
                      </font>
@@ -300,7 +300,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-plus" iconSize="26" />
                      </graphic>
                   </Button>
-                  <Button id="btnAjouterEmpr" fx:id="supAbonnés" layoutX="73.0" layoutY="416.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
+                  <Button id="btnAjouterEmpr" fx:id="supAbonnés" layoutX="73.0" layoutY="416.0" mnemonicParsing="false" onAction="#deleteabonne" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
                      </font>
@@ -308,7 +308,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-trash-alt" iconSize="26" />
                      </graphic>
                   </Button>
-                  <Button id="btnAjouterEmpr" fx:id="updAbonnés" layoutX="127.0" layoutY="416.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
+                  <Button id="btnAjouterEmpr" fx:id="updAbonnés" layoutX="127.0" layoutY="416.0" mnemonicParsing="false" onAction="#updateabonne" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
                      </font>
@@ -360,7 +360,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-plus" iconSize="26" />
                      </graphic>
                   </Button>
-                  <Button id="btnAjouterEmpr" fx:id="supLivre" layoutX="73.0" layoutY="443.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
+                  <Button id="btnAjouterEmpr" fx:id="supLivre" layoutX="73.0" layoutY="443.0" mnemonicParsing="false" onAction="#deleteLivre" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
                      </font>
@@ -368,7 +368,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-trash-alt" iconSize="26" />
                      </graphic>
                   </Button>
-                  <Button id="btnAjouterEmpr" fx:id="updLivre" layoutX="127.0" layoutY="443.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
+                  <Button id="btnAjouterEmpr" fx:id="updLivre" layoutX="127.0" layoutY="443.0" mnemonicParsing="false" onAction="#updatelivre" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
                      </font>
