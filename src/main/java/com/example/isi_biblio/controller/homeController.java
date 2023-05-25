@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import java.sql.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -66,26 +67,40 @@ public class homeController implements Initializable {
 
     @FXML
     private Pane paneLivres;
+    Connection con;
+    public void Connect()
+    {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/biblio","root","");
+        }
+        catch (ClassNotFoundException ex) {
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 
-    @Override
+        @Override
     public void initialize(URL url, ResourceBundle resources) {
+            Connect();
 
-    }
-
-    @FXML
-    public void handleBtnActions(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == btnBib) {
-            paneLivres.toFront();
         }
-        if (actionEvent.getSource() == btnAbn) {
-            paneAbonnés.toFront();
-        }
-        if (actionEvent.getSource() == btnEmpr) {
-            //pnlOverview.setStyle("-fx-background-color : #02030A");
-            paneEmprunts.toFront();
-        }
-    }
+
+            @FXML
+            public void handleBtnActions (ActionEvent actionEvent){
+                if (actionEvent.getSource() == btnBib) {
+                    paneLivres.toFront();
+                }
+                if (actionEvent.getSource() == btnAbn) {
+                    paneAbonnés.toFront();
+                }
+                if (actionEvent.getSource() == btnEmpr) {
+                    //pnlOverview.setStyle("-fx-background-color : #02030A");
+                    paneEmprunts.toFront();
+                }
+            }
 
 
-}
+        }
