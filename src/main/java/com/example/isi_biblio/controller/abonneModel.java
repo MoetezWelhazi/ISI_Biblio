@@ -2,13 +2,31 @@ package com.example.isi_biblio.controller;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-
+import javafx.beans.property.StringProperty;
+import javafx.beans.property.IntegerProperty;
 public class abonneModel {
     private SimpleIntegerProperty idab;
     private SimpleStringProperty nom_prenom;
     private SimpleStringProperty speciality;
     private SimpleStringProperty grp;
-    public abonneModel(Integer idab, String nom_prenom, String speciality,String grp) {
+
+    public IntegerProperty idabProperty() {
+        return idab;
+    }
+
+    public StringProperty nom_prenomProperty() {
+        return nom_prenom;
+    }
+
+    public StringProperty specialityProperty() {
+        return speciality;
+    }
+
+    public StringProperty grpProperty() {
+        return grp;
+    }
+
+    public abonneModel(Integer idab, String nom_prenom, String speciality, String grp) {
         this.idab = new SimpleIntegerProperty(idab);
         this.nom_prenom = new SimpleStringProperty(nom_prenom);
         this.speciality = new SimpleStringProperty(speciality);

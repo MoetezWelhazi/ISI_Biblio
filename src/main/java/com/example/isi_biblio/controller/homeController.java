@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import org.controlsfx.control.CheckComboBox;
 
 import java.sql.*;
 
@@ -35,22 +34,22 @@ public class homeController implements Initializable {
     private TableColumn<livreModel,String> GenreLivreClm;
 
     @FXML
-    private TableColumn<?, ?> GroupAbonnésClm;
+    private TableColumn<abonneModel, String> GroupAbonnésClm;
 
     @FXML
-    private TableColumn<?, ?> IdAbonnésClm;
+    private TableColumn<abonneModel, Number> IdAbonnésClm;
 
     @FXML
     private TableColumn<empModel, Number> IdEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> NPAbonnésClm;
+    private TableColumn<abonneModel, String> NPAbonnésClm;
 
     @FXML
     private TableColumn<livreModel, Number> QuantitéLivreClm;
 
     @FXML
-    private TableColumn<?, ?> SpecAbonnésClm;
+    private TableColumn<abonneModel, String> SpecAbonnésClm;
 
     @FXML
     private TableColumn<empModel, Number> StatusEmpruntsClm;
@@ -92,7 +91,7 @@ public class homeController implements Initializable {
     private TableColumn<livreModel, Number> idLivreClm;
 
     @FXML
-    private TableView<?> listAbonnés;
+    private TableView<abonneModel> listAbonnés;
 
     @FXML
     private TableView<empModel> listEmprunts;
@@ -281,10 +280,50 @@ public class homeController implements Initializable {
 
     }
 
+    public void abonnetable()
+    {
+        Connect();
+        ObservableList<abonneModel> abonnes = FXCollections.observableArrayList();
+        try
+        {
+            PreparedStatement pst = con.prepareStatement("select idab,nom_prenom,speciality,grp from abonne");
+            ResultSet rs = pst.executeQuery();
+            {
+                while (rs.next())
+                {
+                    int idab = Integer.parseInt(rs.getString("idab"));
+                    String nom_prenom=rs.getString("nom_prenom");
+                    String speciality=rs.getString("speciality");
+                    String grp=rs.getString("grp");
+                    abonneModel ab = new abonneModel(idab,nom_prenom,speciality,grp);
+                    abonnes.add(ab);
+                }
+            }
+            listAbonnés.setItems(abonnes);
+            IdAbonnésClm.setCellValueFactory(f -> f.getValue().idabProperty());
+            NPAbonnésClm.setCellValueFactory(f -> f.getValue().nom_prenomProperty());
+            SpecAbonnésClm.setCellValueFactory(f -> f.getValue().specialityProperty());
+            GroupAbonnésClm.setCellValueFactory(f -> f.getValue().grpProperty());
+
+
+
+
+        }
+
+        catch (SQLException ex)
+        {
+            Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ;
+
+
+    }
+
         @Override
     public void initialize(URL url, ResourceBundle resources) {
             Connect();
             livretable();
+            abonnetable();
             ObservableList<Integer> options =
                     FXCollections.observableArrayList(
                             0,
