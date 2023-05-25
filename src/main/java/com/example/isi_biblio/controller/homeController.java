@@ -338,38 +338,52 @@ public class homeController implements Initializable {
 
         }
 
-            @FXML
-            public void handleBtnActions (ActionEvent actionEvent){
-                if (actionEvent.getSource() == btnBib) {
-                    paneLivres.toFront();
-                }
-                if (actionEvent.getSource() == btnAbn) {
-                    paneAbonnés.toFront();
-                }
-                if (actionEvent.getSource() == btnEmpr) {
-                    //pnlOverview.setStyle("-fx-background-color : #02030A");
-                    paneEmprunts.toFront();
-                    emptable();
-                }
-                if(actionEvent.getSource() == optionsAbonnés) {
-                    modAbonnés.toFront();
-                }
-                if(actionEvent.getSource() == optionsLivres) {
-                    modLivres.toFront();
-                }
-                if(actionEvent.getSource() == optionsEmprunts) {
-                    modEmprunts.toFront();
-                }
-                if(actionEvent.getSource() == toggleOptionsAbn) {
-                    modAbonnés.toBack();
-                }
-                if(actionEvent.getSource() == toggleOptionsLiv) {
-                    modLivres.toBack();
-                }
-                if(actionEvent.getSource() == toggleOptionsEmpr) {
-                    modEmprunts.toBack();
-                }
-            }
+    @FXML
+    public void handleBtnActions (ActionEvent actionEvent){
+        if (actionEvent.getSource() == btnBib) {
+            paneLivres.toFront();
+        }
+        if (actionEvent.getSource() == btnAbn) {
+            paneAbonnés.toFront();
+        }
+        if (actionEvent.getSource() == btnEmpr) {
+            //pnlOverview.setStyle("-fx-background-color : #02030A");
+            paneEmprunts.toFront();
+            emptable();
+        }
+        if(actionEvent.getSource() == optionsAbonnés) {
+            modAbonnés.toFront();
+        }
+        if(actionEvent.getSource() == optionsLivres) {
+            modLivres.toFront();
+        }
+        if(actionEvent.getSource() == optionsEmprunts) {
+            modEmprunts.toFront();
+        }
+        if(actionEvent.getSource() == toggleOptionsAbn) {
+            modAbonnés.toBack();
+            modIdAbn.clear();
+            modNP.clear();
+            modSpec.clear();
+            modGroup.clear();
+        }
+        if(actionEvent.getSource() == toggleOptionsLiv) {
+            modLivres.toBack();
+            modIdLivre.clear();
+            modTitre.clear();
+            modAuteur.clear();
+            modGenre.clear();
+            modQtt.clear();
+        }
+        if(actionEvent.getSource() == toggleOptionsEmpr) {
+            modEmprunts.toBack();
+            modIdLivre.clear();
+            modIdAbn.clear();
+            modEmprDteLim.getEditor().clear();
+            modEmprDteLim1.getEditor().clear();
+            modStatusCombo.getEditor().clear();
+        }
+    }
 
 
         }

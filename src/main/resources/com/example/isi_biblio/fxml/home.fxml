@@ -281,7 +281,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modNP" layoutX="14.0" layoutY="191.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modNP" layoutX="14.0" layoutY="191.0" prefHeight="27.0" prefWidth="142.0" promptText="Foulen ben Foulen" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom &amp; Prénom" wrappingWidth="142.0">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -321,8 +321,8 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modSpec" layoutX="14.0" layoutY="273.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
-                  <TextField fx:id="modGroup" layoutX="14.0" layoutY="342.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modSpec" layoutX="14.0" layoutY="273.0" prefHeight="27.0" prefWidth="142.0" promptText="IDL, CS, IRS ..." styleClass="textfield" />
+                  <TextField fx:id="modGroup" layoutX="14.0" layoutY="342.0" prefHeight="27.0" prefWidth="142.0" promptText="ING01, CS02 ..." styleClass="textfield" />
                </children>
             </Pane>
             <Pane fx:id="modLivres" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B8374;">
@@ -346,7 +346,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modTitre" layoutX="14.0" layoutY="201.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modTitre" layoutX="14.0" layoutY="201.0" prefHeight="27.0" prefWidth="142.0" promptText="L'Etranger" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre" wrappingWidth="92.22899627685547">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -376,7 +376,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-edit" iconSize="26" />
                      </graphic>
                   </Button>
-                  <TextField fx:id="modAuteur" layoutX="14.0" layoutY="272.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modAuteur" layoutX="14.0" layoutY="272.0" prefHeight="27.0" prefWidth="142.0" promptText="Victor Hugo" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auteur" wrappingWidth="92.22899627685547">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -387,13 +387,13 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modQtt" layoutX="14.0" layoutY="339.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modQtt" layoutX="14.0" layoutY="339.0" prefHeight="27.0" prefWidth="142.0" promptText="1" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" wrappingWidth="92.22899627685547">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modGenre" layoutX="14.0" layoutY="405.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modGenre" layoutX="14.0" layoutY="405.0" prefHeight="27.0" prefWidth="142.0" promptText="Sci-Fi" styleClass="textfield" />
                </children>
             </Pane>
             <VBox prefHeight="507.0" prefWidth="177.0" style="-fx-background-color: #09C0A3;">
