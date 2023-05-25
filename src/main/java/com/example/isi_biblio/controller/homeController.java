@@ -109,7 +109,7 @@ public class homeController implements Initializable {
     private Pane modAbonnés;
 
     @FXML
-    private TextField modAuteur; //BILEL
+    private TextField modAuteur;
 
     @FXML
     private DatePicker modEmprDteLim;
@@ -127,7 +127,7 @@ public class homeController implements Initializable {
     private TextField modIdAbn;
 
     @FXML
-    private TextField modIdLivre; //BILEL
+    private TextField modIdLivre;
 
     @FXML
     private TextField modLivre;
@@ -139,19 +139,19 @@ public class homeController implements Initializable {
     private TextField modNP;
 
     @FXML
-    private TextField modQtt; //BILEL
+    private TextField modQtt;
 
     @FXML
     private TextField modSpec;
 
     @FXML
-    private TextField modGenre; //BILEL
+    private TextField modGenre;
 
     @FXML
     private ComboBox<Integer> modStatusCombo;
 
     @FXML
-    private TextField modTitre; //BILEL
+    private TextField modTitre;
 
     @FXML
     private Button optionsAbonnés;
@@ -278,7 +278,27 @@ public class homeController implements Initializable {
         {
             Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ;
+        listLivres.setRowFactory( tv -> {
+            TableRow<livreModel> myRow = new TableRow<>();
+            myRow.setOnMouseClicked (event ->
+            {
+                if (event.getClickCount() == 1 && (!myRow.isEmpty()))
+                {
+                    int myIndex = listLivres.getSelectionModel().getSelectedIndex();
+                    int id = Integer.parseInt(String.valueOf(listLivres.getItems().get(myIndex).getIdLivre()));
+                    modIdLivre.setText(String.valueOf(id));
+                    modTitre.setText(listLivres.getItems().get(myIndex).getTitre());
+                    modAuteur.setText(listLivres.getItems().get(myIndex).getAutheur());
+                    modGenre.setText(listLivres.getItems().get(myIndex).getGenre());
+                    modQtt.setText(String.valueOf(listLivres.getItems().get(myIndex).getQte()));
+
+
+
+                }
+            });
+            return myRow;
+        });
+
 
 
     }
@@ -317,7 +337,26 @@ public class homeController implements Initializable {
         {
             Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ;
+        listAbonnés.setRowFactory( tv -> {
+            TableRow<abonneModel> myRow = new TableRow<>();
+            myRow.setOnMouseClicked (event ->
+            {
+                if (event.getClickCount() == 1 && (!myRow.isEmpty()))
+                {
+                    int myIndex = listAbonnés.getSelectionModel().getSelectedIndex();
+                    int id = Integer.parseInt(String.valueOf(listAbonnés.getItems().get(myIndex).getIdab()));
+                    modIdAbn.setText(String.valueOf(id));
+                    modNP.setText(listAbonnés.getItems().get(myIndex).getNom_prenom());
+                    modSpec.setText(listAbonnés.getItems().get(myIndex).getSpeciality());
+                    modGroup.setText(listAbonnés.getItems().get(myIndex).getGrp());
+
+                }
+            });
+            return myRow;
+        });
+
+
+
 
 
     }
