@@ -381,6 +381,8 @@ public class homeController implements Initializable {
             modStatusCombo.setItems(options);
 
 
+
+
         }
 
         public void searchLivres(){
@@ -514,6 +516,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        livretable();
     }
 
     public void deleteabonne(){
@@ -527,6 +530,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        abonnetable();
     }
 
     public void deleteEmp(){
@@ -540,6 +544,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        emptable();
     }
     public void updatelivre()
     {
@@ -563,6 +568,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        livretable();
 
     }
 
@@ -577,7 +583,7 @@ public class homeController implements Initializable {
         ch5=Integer.parseInt(String.valueOf(listAbonnés.getItems().get(myIndex).getIdab()));
         PreparedStatement pst = null;
         try {
-            pst = con.prepareStatement("UPDATE abonne SET nom_prenom=?,speciality=?,grp=? WHERE idabs=?");
+            pst = con.prepareStatement("UPDATE abonne SET nom_prenom=?,speciality=?,grp=? WHERE idab=?");
             pst.setString(1, ch1);
             pst.setString(2, ch2);
             pst.setString(3, ch3);
@@ -586,7 +592,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        abonnetable();
     }
 
 
@@ -610,7 +616,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        emptable();
     }
 
     @FXML
