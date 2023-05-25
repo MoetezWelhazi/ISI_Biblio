@@ -53,11 +53,12 @@ public class empModel {
     public String getNomPrenom() {
         return nom_prenom.get();
     }
-    public String getDateEmp() {
-        return dateEmp.get();
+    public SimpleStringProperty getDateEmp() {
+       return dateEmp;
+
     }
-    public String getDateLimit() {
-        return dateLimit.get();
+    public SimpleStringProperty getDateLimit() {
+        return dateLimit;
     }
     public int getStatus() {return status.get();}
 }
