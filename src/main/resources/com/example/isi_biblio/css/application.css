@@ -1,0 +1,282 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+*{
+	-fx-my-menu-color:  #232323;
+	-fx-my-menu-color-highlated:  #18f2cd  ;
+	-fx-my-menu-font-color: #FFFFFF;
+	-fx-my-menu-font-color-highlighted:  #18f2cd;
+	-fx-random-color: #09C0A3 ;
+	
+	
+}
+
+.table-view .column-header-background .filler {
+	-fx-background-color: transparent;
+}
+
+.table-view .corner {
+	-fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+	-fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+	-fx-background-radius: 7px 7px 0px 0px;
+	-fx-background-insets: 0 11px 0 0;
+	-fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header {
+	-fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+	-fx-border-color: transparent;
+	-fx-padding: 2 0 2 10px;
+}
+.table-row-cell:hover {
+	-fx-background-color: #93f9b911;
+	-fx-text-background-color: red;
+}
+.table-row-cell:odd{
+	-fx-background-color: #93f9b911;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-padding: 0.0em;
+}
+.table-row-cell:even{
+	-fx-background-color: #1dbbdd11;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-padding: 0.0em;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+	-fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+	-fx-opacity: 0;
+	-fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+	-fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+	-fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+	-fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+	-fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
+}
+
+.table-row-cell: highlighted {
+	-fx-background-color: #81c483;
+	-fx-background-radius: 15px;
+}
+
+
+/*Menu bar + top level MENU BUTTONS */
+
+/*The menu bar */
+.menu-bar{
+	-fx-background-color:  -fx-my-menu-color;
+}
+
+/* .menu-bar > .container > .header-menus{
+	-fx-padding: 80;
+}
+*/
+/* Top level menu itself (not selected / hovered) */
+.menu-bar > .container > .menu-button {
+	-fx-background-color: -fx-my-menu-color;
+}
+
+/*Top level menu's label (not selected / hovered) */
+.menu-bar > .container > .menu-button > .label {
+	-fx-text-fill: -fx-my-menu-font-color; 
+}
+
+/* Top level menu's label (disabled) */
+
+.menu-bar > .container > .menu-button > .label:disabled {
+	-fx-opacity: 1.0;
+}
+
+/* Top level menu itself ( selected / hovered ) */
+
+.menu-bar > .container > .menu-button:hover ,
+.menu-bar > .container > .menu-button:focused ,
+.menu-bar > .container > .menu-button:showing {
+	-fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/* Top level menu's label (selected / hovered) */
+
+.menu-bar > .container > .menu-button:hover > .label ,
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:hover > .label{
+	-fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* Menu item (children of a menu button) */
+
+.menu-item{
+	-fx-background-color: -fx-my-menu-color;
+}
+
+/*item's label (not hovered / focused)*/
+
+.menu-item .label {
+	-fx-text-fill: -fx-my-menu-font-color;
+}
+
+/* the item's label (disabled) */
+
+.menu-item .label:disabled {
+	-fx-opacity: 1.0;
+}
+
+/*menu item (hovered / focused) */
+
+.menu-item:focused, .menu-item:hover {
+	-fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*the item's label (hovered / focused) */
+
+.menu-item:focused .label, .menu-item:hover .label{
+	-fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* Context Menu */
+
+.context-menu{
+	-fx-background-color: #232323;
+}
+
+.text-input
+{
+	-fx-background-radius: 20;
+	-fx-text-fill : #232323;
+	-fx-prompt-text-fill:#D4CEE3;
+}
+
+.link{
+	-fx-text-fill : #232323;
+}
+
+.link:hover{
+	-fx-underline: true;
+	-fx-text-fill: #1b50fd;
+}
+
+.homeButton{
+	-fx-background-color: #09C0A3;
+	-fx-text-fill: white;
+}
+
+.homeButton:hover{
+	-fx-background-color: -fx-my-menu-font-color-highlighted;
+}
+ 
+.button1
+{
+	-fx-background-color : #2B8374;
+	-fx-text-fill : white ;
+	-fx-background-radius: 2;
+}
+
+.button1:hover:pressed
+{
+	-fx-background-color: white;
+	-fx-border-color: #09C0A3;
+	-fx-text-fill : #09C0A3 ;
+}
+
+.button1:hover:pressed > .ikonli-font-icon{
+	-fx-icon-color: #09C0A3;
+}
+
+.button1:hover 
+{
+	-fx-background-color : #09C0A3 ;
+	-fx-text-fill: white ;
+	-fx-border-color: #09C0A3;
+}
+
+
+.button1:active
+{
+	-fx-text-fill : #80AFF5;
+}
+
+.button2 
+{
+	-fx-background-color: #ADEAE0;
+	-fx-background-radius: 2;
+	-fx-border-color: #739C95;
+	-fx-text-fill: #739C95;
+} 
+
+.button2:hover 
+{
+	-fx-background-color: #E4EEFD;
+	-fx-background-radius: 2;
+}
+
+.button2:pressed 
+{
+	-fx-background-color: #E4EEFD;
+	-fx-background-radius: 2;
+}
+
+.button3
+{
+	-fx-background-color: linear-gradient(to top left, #35ACF1, #F6B46F);
+	-fx-background-radius: 12;
+	-fx-border-style: solid;
+	-fx-border-radius: 12;
+	-fx-border-insets: -5;
+	-fx-border-color: linear-gradient(to top left, #35ACF1, #F6B46F);
+}
+
+.button4
+{
+	-fx-background-color: linear-gradient(to top left, #41951C, #D4CEE3);
+	-fx-background-radius: 30 30 30 30;
+}
+
+.textfield
+{
+	-fx-prompt-text-fill:  #739C95;
+	-fx-background-color: white;
+	-fx-background-radius: 2 ;
+	-fx-border-radius: 2;
+	-fx-border-color: darkgray;
+
+}
+
+
+.button4:hover
+{
+	-fx-background-color: linear-gradient(to top left, #D4CEE3, #D4CEE3);
+	-fx-background-radius: 30 30 30 30;
+}
+
+.linear-grad
+{
+	-fx-background-color: linear-gradient(to top right, #09C0A3, #ADEAE0);
+}
+
+.linear-gradL
+{
+	-fx-background-color: linear-gradient(to top right,#09C0A3 , #18f2cd);
+}
