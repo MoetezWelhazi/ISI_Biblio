@@ -210,6 +210,15 @@ public class homeController implements Initializable {
     private Button updEmprunt;
 
     @FXML
+    private Button clearAbonné;
+
+    @FXML
+    private Button clearEmpr;
+
+    @FXML
+    private Button clearLivre;
+
+    @FXML
     private Button updLivre;
     ObservableList<empModel> emprunts;
     public void emptable()
@@ -242,7 +251,6 @@ public class homeController implements Initializable {
             StatusEmpruntsClm.setCellValueFactory(f -> f.getValue().statusProperty());
 
         }
-
         catch (SQLException ex)
         {
             Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
@@ -297,14 +305,10 @@ public class homeController implements Initializable {
                     modGenre.setText(listLivres.getItems().get(myIndex).getGenre());
                     modQtt.setText(String.valueOf(listLivres.getItems().get(myIndex).getQte()));
 
-
-
                 }
             });
             return myRow;
         });
-
-
 
     }
     ObservableList<abonneModel> abonnes;
@@ -360,9 +364,6 @@ public class homeController implements Initializable {
     }
 
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resources) {
             Connect();
@@ -379,8 +380,6 @@ public class homeController implements Initializable {
                            null
                     );
             modStatusCombo.setItems(options);
-
-
         }
 
         public void searchLivres(){
@@ -393,7 +392,6 @@ public class homeController implements Initializable {
                     if (newValue == null || newValue.isEmpty()) {
                         return true;
                     }
-
 
                     String lowerCaseFilter = newValue.toLowerCase();
 
@@ -433,7 +431,6 @@ public class homeController implements Initializable {
                     return true;
                 }
 
-
                 String lowerCaseFilter = newValue.toLowerCase();
 
                 if (abonne.getGrp().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
@@ -472,7 +469,6 @@ public class homeController implements Initializable {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
-
 
                 String lowerCaseFilter = newValue.toLowerCase();
 
@@ -637,28 +633,39 @@ public class homeController implements Initializable {
         }
         if(actionEvent.getSource() == toggleOptionsAbn) {
             modAbonnés.toBack();
-            modIdAbn.clear();
-            modNP.clear();
-            modSpec.clear();
-            modGroup.clear();
+            clearAbn();
         }
         if(actionEvent.getSource() == toggleOptionsLiv) {
             modLivres.toBack();
-            modIdLivre.clear();
-            modTitre.clear();
-            modAuteur.clear();
-            modGenre.clear();
-            modQtt.clear();
+            clearLiv();
         }
         if(actionEvent.getSource() == toggleOptionsEmpr) {
             modEmprunts.toBack();
-            modLivre.clear();
-            modAbn.clear();
-            modEmprDteLim.getEditor().clear();
-            modEmprDteLim1.getEditor().clear();
-            modStatusCombo.getEditor().clear();
+            clearEmpr();
         }
     }
 
+    public void clearAbn(){
+        modIdAbn.clear();
+        modNP.clear();
+        modSpec.clear();
+        modGroup.clear();
+    }
 
-        }
+    public void clearLiv(){
+        modIdLivre.clear();
+        modTitre.clear();
+        modAuteur.clear();
+        modGenre.clear();
+        modQtt.clear();
+    }
+
+    public void clearEmpr(){
+        modLivre.clear();
+        modAbn.clear();
+        modEmprDteLim.getEditor().clear();
+        modEmprDteLim1.getEditor().clear();
+        modStatusCombo.getEditor().clear();
+    }
+
+}
