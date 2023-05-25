@@ -1,22 +1,21 @@
 package com.example.isi_biblio.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import org.controlsfx.control.CheckComboBox;
-import org.controlsfx.control.HiddenSidesPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+
 import java.sql.*;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class homeController implements Initializable {
 
@@ -24,7 +23,7 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> AbonnéEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> AuteurLivreClm;
+    private TableColumn<livreModel,String> AuteurLivreClm;
 
     @FXML
     private TableColumn<?, ?> DteEmprtEmpruntsClm;
@@ -33,7 +32,7 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> DteLimEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> GenreLivreClm;
+    private TableColumn<livreModel,String> GenreLivreClm;
 
     @FXML
     private TableColumn<?, ?> GroupAbonnésClm;
@@ -48,7 +47,7 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> NPAbonnésClm;
 
     @FXML
-    private TableColumn<?, ?> QuantitéLivreClm;
+    private TableColumn<livreModel, Number> QuantitéLivreClm;
 
     @FXML
     private TableColumn<?, ?> SpecAbonnésClm;
@@ -60,7 +59,7 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> TitreEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> TitreLivreClm;
+    private TableColumn<livreModel,String> TitreLivreClm;
 
     @FXML
     private TextField abonnésSearchField;
@@ -90,7 +89,7 @@ public class homeController implements Initializable {
     private AnchorPane homeAnchor;
 
     @FXML
-    private TableColumn<?, ?> idLivreClm;
+    private TableColumn<livreModel, Number> idLivreClm;
 
     @FXML
     private TableView<?> listAbonnés;
@@ -99,7 +98,7 @@ public class homeController implements Initializable {
     private TableView<?> listEmprunts;
 
     @FXML
-    private TableView<?> listLivres;
+    private TableView<livreModel> listLivres;
 
     @FXML
     private TextField livresSearchField;
@@ -207,9 +206,50 @@ public class homeController implements Initializable {
     @FXML
     private Button updLivre;
 
+    public void livretable()
+    {
+        Connect();
+        ObservableList<livreModel> livres = FXCollections.observableArrayList();
+        try
+        {
+            PreparedStatement pst = con.prepareStatement("select idlivre,titre,autheur,genre,quantite from livre");
+            ResultSet rs = pst.executeQuery();
+            {
+                while (rs.next())
+                {
+                    int id_liv = Integer.parseInt(rs.getString("idlivre"));
+                    String titre=rs.getString("titre");
+                    String autheur=rs.getString("autheur");
+                    String genre=rs.getString("genre");
+                    int qte=Integer.parseInt(rs.getString("quantite"));
+                    livreModel lv = new livreModel(id_liv,titre,autheur,genre,qte);
+                    livres.add(lv);
+                }
+            }
+            listLivres.setItems(livres);
+            idLivreClm.setCellValueFactory(f -> f.getValue().idlivreProperty());
+            TitreLivreClm.setCellValueFactory(f -> f.getValue().titreProperty());
+            AuteurLivreClm.setCellValueFactory(f -> f.getValue().autheurProperty());
+            GenreLivreClm.setCellValueFactory(f -> f.getValue().genreProperty());
+            QuantitéLivreClm.setCellValueFactory(f -> f.getValue().qteProperty());
+
+
+
+        }
+
+        catch (SQLException ex)
+        {
+            Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ;
+
+
+    }
+
         @Override
     public void initialize(URL url, ResourceBundle resources) {
             Connect();
+            livretable();
 
         }
 
