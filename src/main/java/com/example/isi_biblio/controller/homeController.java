@@ -110,7 +110,7 @@ public class homeController implements Initializable {
     private Pane modAbonnés;
 
     @FXML
-    private TextField modAuteur;
+    private TextField modAuteur; //BILEL
 
     @FXML
     private DatePicker modEmprDteLim;
@@ -128,7 +128,7 @@ public class homeController implements Initializable {
     private TextField modIdAbn;
 
     @FXML
-    private TextField modIdLivre;
+    private TextField modIdLivre; //BILEL
 
     @FXML
     private TextField modLivre;
@@ -140,16 +140,19 @@ public class homeController implements Initializable {
     private TextField modNP;
 
     @FXML
-    private TextField modQtt;
+    private TextField modQtt; //BILEL
 
     @FXML
     private TextField modSpec;
 
     @FXML
+    private TextField modGenre; //BILEL
+
+    @FXML
     private ComboBox<Integer> modStatusCombo;
 
     @FXML
-    private TextField modTitre;
+    private TextField modTitre; //BILEL
 
     @FXML
     private Button optionsAbonnés;
