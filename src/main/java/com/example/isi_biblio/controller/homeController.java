@@ -20,16 +20,16 @@ import java.util.logging.Logger;
 public class homeController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> AbonnéEmpruntsClm;
+    private TableColumn<empModel, String> AbonnéEmpruntsClm;
 
     @FXML
     private TableColumn<livreModel,String> AuteurLivreClm;
 
     @FXML
-    private TableColumn<?, ?> DteEmprtEmpruntsClm;
+    private TableColumn<empModel, String> DteEmprtEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> DteLimEmpruntsClm;
+    private TableColumn<empModel, String> DteLimEmpruntsClm;
 
     @FXML
     private TableColumn<livreModel,String> GenreLivreClm;
@@ -41,7 +41,7 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> IdAbonnésClm;
 
     @FXML
-    private TableColumn<?, ?> IdEmpruntsClm;
+    private TableColumn<empModel, Number> IdEmpruntsClm;
 
     @FXML
     private TableColumn<?, ?> NPAbonnésClm;
@@ -53,10 +53,10 @@ public class homeController implements Initializable {
     private TableColumn<?, ?> SpecAbonnésClm;
 
     @FXML
-    private TableColumn<?, ?> StatusEmpruntsClm;
+    private TableColumn<empModel, Number> StatusEmpruntsClm;
 
     @FXML
-    private TableColumn<?, ?> TitreEmpruntsClm;
+    private TableColumn<empModel, String> TitreEmpruntsClm;
 
     @FXML
     private TableColumn<livreModel,String> TitreLivreClm;
@@ -95,7 +95,7 @@ public class homeController implements Initializable {
     private TableView<?> listAbonnés;
 
     @FXML
-    private TableView<?> listEmprunts;
+    private TableView<empModel> listEmprunts;
 
     @FXML
     private TableView<livreModel> listLivres;
@@ -208,6 +208,42 @@ public class homeController implements Initializable {
     @FXML
     private Button updLivre;
 
+    public void emptable()
+    {
+        Connect();
+        ObservableList<empModel> emprunts = FXCollections.observableArrayList();
+        try
+        {
+            PreparedStatement pst = con.prepareStatement("SELECT idemprunt,titre,nom_prenom,dateemprt,datalimit,status FROM emprunts,abonne,livre WHERE emprunts.idlivre=livre.idlivre AND emprunts.idab=abonne.idab;");
+            ResultSet rs = pst.executeQuery();
+            {
+                while (rs.next())
+                {
+                    int id_emp = Integer.parseInt(rs.getString("idemprunt"));
+                    String titre=rs.getString("titre");
+                    String abonnee=rs.getString("nom_prenom");
+                    String dateemprt=rs.getString("dateemprt");
+                    String datelimit=rs.getString("datalimit");
+                    int status=Integer.parseInt(rs.getString("status"));
+                    empModel ep = new empModel(id_emp,titre,abonnee,dateemprt,datelimit,status);
+                    emprunts.add(ep);
+                }
+            }
+            listEmprunts.setItems(emprunts);
+            IdEmpruntsClm .setCellValueFactory(f -> f.getValue().idempProperty());
+            TitreEmpruntsClm.setCellValueFactory(f -> f.getValue().titreProperty());
+            AbonnéEmpruntsClm.setCellValueFactory(f -> f.getValue().nom_prenom_Property());
+            DteEmprtEmpruntsClm.setCellValueFactory(f -> f.getValue().dateemp_Property());
+            DteLimEmpruntsClm.setCellValueFactory(f -> f.getValue().datelimit_Property());
+            StatusEmpruntsClm.setCellValueFactory(f -> f.getValue().statusProperty());
+        }
+
+        catch (SQLException ex)
+        {
+            Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public void livretable()
     {
         Connect();
@@ -234,9 +270,6 @@ public class homeController implements Initializable {
             AuteurLivreClm.setCellValueFactory(f -> f.getValue().autheurProperty());
             GenreLivreClm.setCellValueFactory(f -> f.getValue().genreProperty());
             QuantitéLivreClm.setCellValueFactory(f -> f.getValue().qteProperty());
-
-
-
         }
 
         catch (SQLException ex)
@@ -266,6 +299,7 @@ public class homeController implements Initializable {
                 if (actionEvent.getSource() == btnEmpr) {
                     //pnlOverview.setStyle("-fx-background-color : #02030A");
                     paneEmprunts.toFront();
+                    emptable();
                 }
                 if(actionEvent.getSource() == optionsAbonnés) {
                     modAbonnés.toFront();
