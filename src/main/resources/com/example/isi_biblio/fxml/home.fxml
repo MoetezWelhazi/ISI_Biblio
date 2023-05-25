@@ -325,60 +325,6 @@
                   <TextField fx:id="modGroup" layoutX="14.0" layoutY="342.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                </children>
             </Pane>
-            <VBox prefHeight="507.0" prefWidth="177.0" style="-fx-background-color: #09C0A3;">
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.5299999713897705" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <children>
-                  <Pane prefHeight="88.0" prefWidth="194.0">
-                     <children>
-                        <FontIcon iconColor="WHITE" iconLiteral="fas-book-open" iconSize="35" layoutX="25.0" layoutY="57.0" wrappingWidth="40.0" />
-                        <Text fill="WHITE" layoutX="71.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISI Biblio">
-                           <font>
-                              <Font name="MarkPro" size="26.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Pane>
-                  <Button id="btnBib" fx:id="btnBib" alignment="BASELINE_LEFT" graphicTextGap="18.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="206.0" styleClass="homeButton" text="Bibliothéque" textFill="WHITE">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <font>
-                        <Font name="MarkPro-Book" size="16.0" />
-                     </font>
-                     <graphic>
-                        <FontIcon iconColor="WHITE" iconLiteral="fas-book" iconSize="25" />
-                     </graphic>
-                  </Button>
-                  <Button id="btnAbn" fx:id="btnAbn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="222.0" styleClass="homeButton" text="Abonnés" textFill="WHITE">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <graphic>
-                        <FontIcon iconColor="WHITE" iconLiteral="fas-users" iconSize="25" />
-                     </graphic>
-                     <font>
-                        <Font name="MarkPro-Book" size="16.0" />
-                     </font>
-                  </Button>
-                  <Button id="btnEmpr" fx:id="btnEmpr" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="197.0" styleClass="homeButton" text="Emprunts" textFill="WHITE">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <graphic>
-                        <FontIcon iconColor="WHITE" iconLiteral="fas-book-reader" iconSize="25" />
-                     </graphic>
-                     <font>
-                        <Font name="MarkPro-Book" size="16.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
             <Pane fx:id="modLivres" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B8374;">
                <children>
                   <Label layoutX="14.0" prefHeight="88.0" prefWidth="165.0" text="Mise à Jour Livres" textAlignment="CENTER" textFill="WHITE" wrapText="true">
@@ -450,6 +396,60 @@
                   <TextField fx:id="modGenre" layoutX="14.0" layoutY="405.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                </children>
             </Pane>
+            <VBox prefHeight="507.0" prefWidth="177.0" style="-fx-background-color: #09C0A3;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.5299999713897705" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Pane prefHeight="88.0" prefWidth="194.0">
+                     <children>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-book-open" iconSize="35" layoutX="25.0" layoutY="57.0" wrappingWidth="40.0" />
+                        <Text fill="WHITE" layoutX="71.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISI Biblio">
+                           <font>
+                              <Font name="MarkPro" size="26.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Button id="btnBib" fx:id="btnBib" alignment="BASELINE_LEFT" graphicTextGap="18.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="206.0" styleClass="homeButton" text="Bibliothéque" textFill="WHITE">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="MarkPro-Book" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-book" iconSize="25" />
+                     </graphic>
+                  </Button>
+                  <Button id="btnAbn" fx:id="btnAbn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="222.0" styleClass="homeButton" text="Abonnés" textFill="WHITE">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-users" iconSize="25" />
+                     </graphic>
+                     <font>
+                        <Font name="MarkPro-Book" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button id="btnEmpr" fx:id="btnEmpr" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBtnActions" prefHeight="48.0" prefWidth="197.0" styleClass="homeButton" text="Emprunts" textFill="WHITE">
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-book-reader" iconSize="25" />
+                     </graphic>
+                     <font>
+                        <Font name="MarkPro-Book" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </StackPane>
    </children>
