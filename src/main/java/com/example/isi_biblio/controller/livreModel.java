@@ -60,4 +60,5 @@ public class livreModel {
     public void setQte(int idlivre) {
         this.qte = new SimpleIntegerProperty(idlivre);
     }
+
 }
