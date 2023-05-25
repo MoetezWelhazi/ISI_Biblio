@@ -4,6 +4,7 @@ module com.example.isi_biblio {
 
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
+    requires org.controlsfx.controls;
     requires java.sql;
     requires mysql.connector.java;
 
