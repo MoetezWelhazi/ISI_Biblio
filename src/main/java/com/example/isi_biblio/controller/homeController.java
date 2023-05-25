@@ -17,6 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class homeController implements Initializable {
 
@@ -255,6 +257,30 @@ public class homeController implements Initializable {
         {
             Logger.getLogger(homeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        listEmprunts.setRowFactory( tv -> {
+            TableRow<empModel> myRow = new TableRow<>();
+            myRow.setOnMouseClicked (event ->
+            {
+                if (event.getClickCount() == 1 && (!myRow.isEmpty()))
+                {
+                    int myIndex = listEmprunts.getSelectionModel().getSelectedIndex();
+                    int id = Integer.parseInt(String.valueOf(listEmprunts.getItems().get(myIndex).getIdemp()));
+                    //modIdAbn.setText(String.valueOf(id));
+                    modLivre.setText(listEmprunts.getItems().get(myIndex).getTitre());
+                    modAbn.setText(listEmprunts.getItems().get(myIndex).getNomPrenom());
+                    modStatusCombo.setValue(listEmprunts.getItems().get(myIndex).getStatus());
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    LocalDate date_emp = LocalDate.parse(listEmprunts.getItems().get(myIndex).getDateEmp(), formatter);
+                    modEmprDteLim.setValue(date_emp);
+                    LocalDate date_limit = LocalDate.parse(listEmprunts.getItems().get(myIndex).getDateLimit(), formatter);
+                    modEmprDteLim1.setValue(date_limit);
+
+
+                }
+            });
+            return myRow;
+        });
         searchemp();
     }
     ObservableList<livreModel> livres;
@@ -510,6 +536,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        livretable();
     }
 
     public void deleteabonne(){
@@ -523,6 +550,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        abonnetable();
     }
 
     public void deleteEmp(){
@@ -536,6 +564,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        emptable();
     }
     public void updatelivre()
     {
@@ -559,6 +588,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        livretable();
 
     }
 
@@ -573,7 +603,7 @@ public class homeController implements Initializable {
         ch5=Integer.parseInt(String.valueOf(listAbonnés.getItems().get(myIndex).getIdab()));
         PreparedStatement pst = null;
         try {
-            pst = con.prepareStatement("UPDATE abonne SET nom_prenom=?,speciality=?,grp=? WHERE idabs=?");
+            pst = con.prepareStatement("UPDATE abonne SET nom_prenom=?,speciality=?,grp=? WHERE idab=?");
             pst.setString(1, ch1);
             pst.setString(2, ch2);
             pst.setString(3, ch3);
@@ -582,7 +612,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        abonnetable();
     }
 
 
@@ -606,7 +636,7 @@ public class homeController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        emptable();
     }
 
     @FXML
