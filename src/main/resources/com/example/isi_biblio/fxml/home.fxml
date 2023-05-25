@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -18,7 +19,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import org.controlsfx.control.CheckComboBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <AnchorPane id="homeAnchor" fx:id="homeAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="756.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.isi_biblio.controller.homeController">
@@ -218,7 +218,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modNP" editable="false" layoutX="14.0" layoutY="191.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modNP" layoutX="14.0" layoutY="191.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom &amp; Prénom" wrappingWidth="142.0">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -258,8 +258,8 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modSpec" editable="false" layoutX="14.0" layoutY="273.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
-                  <TextField fx:id="modGroup" editable="false" layoutX="14.0" layoutY="342.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modSpec" layoutX="14.0" layoutY="273.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modGroup" layoutX="14.0" layoutY="342.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                </children>
             </Pane>
             <Pane fx:id="modLivres" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B8374;">
@@ -283,7 +283,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modTitre" editable="false" layoutX="14.0" layoutY="201.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modTitre" layoutX="14.0" layoutY="201.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre" wrappingWidth="92.22899627685547">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -313,7 +313,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-edit" iconSize="26" />
                      </graphic>
                   </Button>
-                  <TextField fx:id="modAuteur" editable="false" layoutX="14.0" layoutY="272.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modAuteur" layoutX="14.0" layoutY="272.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                   <Text fill="WHITE" layoutX="14.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auteur" wrappingWidth="92.22899627685547">
                      <font>
                         <Font name="MarkPro-Bold" size="18.0" />
@@ -324,7 +324,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="modQtt" editable="false" layoutX="14.0" layoutY="339.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
+                  <TextField fx:id="modQtt" layoutX="14.0" layoutY="339.0" prefHeight="27.0" prefWidth="142.0" promptText="0123" styleClass="textfield" />
                </children>
             </Pane>
             <Pane fx:id="modEmprunts" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B8374;">
@@ -366,7 +366,6 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
-                  <CheckComboBox fx:id="modStatusCombo" layoutX="14.0" layoutY="396.0" prefHeight="25.0" prefWidth="142.0" />
                   <Button id="btnAjouterEmpr" fx:id="addEmprunt" layoutX="40.0" layoutY="441.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-radius: 5;" styleClass="button1">
                      <font>
                         <Font name="MarkPro-Bold" size="13.0" />
@@ -388,6 +387,7 @@
                         <Font name="MarkPro-Bold" size="18.0" />
                      </font>
                   </Text>
+                  <ComboBox fx:id="modStatusCombo" layoutX="14.0" layoutY="394.0" prefHeight="27.0" prefWidth="142.0" styleClass="textfield" />
                </children>
             </Pane>
             <VBox prefHeight="507.0" prefWidth="177.0" style="-fx-background-color: #09C0A3;">
