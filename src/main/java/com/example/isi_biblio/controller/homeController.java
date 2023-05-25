@@ -416,8 +416,8 @@ public class homeController implements Initializable {
         }
         if(actionEvent.getSource() == toggleOptionsEmpr) {
             modEmprunts.toBack();
-            modIdLivre.clear();
-            modIdAbn.clear();
+            modLivre.clear();
+            modAbn.clear();
             modEmprDteLim.getEditor().clear();
             modEmprDteLim1.getEditor().clear();
             modStatusCombo.getEditor().clear();
