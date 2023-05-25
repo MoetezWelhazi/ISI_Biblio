@@ -4,6 +4,7 @@ module com.example.isi_biblio {
 
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
+    requires org.controlsfx.controls;
 
     opens com.example.isi_biblio to javafx.fxml;
     opens com.example.isi_biblio.controller to javafx.fxml;
