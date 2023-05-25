@@ -146,7 +146,7 @@ public class homeController implements Initializable {
     private TextField modSpec;
 
     @FXML
-    private CheckComboBox<?> modStatusCombo;
+    private ComboBox<Integer> modStatusCombo;
 
     @FXML
     private TextField modTitre;
@@ -252,6 +252,14 @@ public class homeController implements Initializable {
     public void initialize(URL url, ResourceBundle resources) {
             Connect();
             livretable();
+            ObservableList<Integer> options =
+                    FXCollections.observableArrayList(
+                            0,
+                            1,
+                           null
+                    );
+            modStatusCombo.setItems(options);
+
 
         }
 
