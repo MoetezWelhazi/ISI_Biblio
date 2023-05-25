@@ -207,6 +207,7 @@
 
 .button1:hover 
 {
+	-fx-cursor: hand;
 	-fx-background-color : #09C0A3 ;
 	-fx-text-fill: white ;
 	-fx-border-color: #09C0A3;

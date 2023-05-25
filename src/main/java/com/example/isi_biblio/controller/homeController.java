@@ -141,7 +141,7 @@ public class homeController implements Initializable {
     private TextField modNP;
 
     @FXML
-    private Spinner<?> modQtt;
+    private TextField modQtt;
 
     @FXML
     private TextField modSpec;
@@ -169,7 +169,9 @@ public class homeController implements Initializable {
 
     @FXML
     private Pane paneLivres;
+
     Connection con;
+
     public void Connect()
     {
         try {
@@ -210,7 +212,6 @@ public class homeController implements Initializable {
         @Override
     public void initialize(URL url, ResourceBundle resources) {
             Connect();
-
         }
 
             @FXML
@@ -224,6 +225,24 @@ public class homeController implements Initializable {
                 if (actionEvent.getSource() == btnEmpr) {
                     //pnlOverview.setStyle("-fx-background-color : #02030A");
                     paneEmprunts.toFront();
+                }
+                if(actionEvent.getSource() == optionsAbonnés) {
+                    modAbonnés.toFront();
+                }
+                if(actionEvent.getSource() == optionsLivres) {
+                    modLivres.toFront();
+                }
+                if(actionEvent.getSource() == optionsEmprunts) {
+                    modEmprunts.toFront();
+                }
+                if(actionEvent.getSource() == toggleOptionsAbn) {
+                    modAbonnés.toBack();
+                }
+                if(actionEvent.getSource() == toggleOptionsLiv) {
+                    modLivres.toBack();
+                }
+                if(actionEvent.getSource() == toggleOptionsEmpr) {
+                    modEmprunts.toBack();
                 }
             }
 
