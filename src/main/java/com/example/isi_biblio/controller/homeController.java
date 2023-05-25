@@ -655,22 +655,22 @@ public class homeController implements Initializable {
     }
 
     public void  addemp(){
-        String ch1,ch2,ch3,ch4;
-        int ch5;
-        ch1=modLivre.getText();
-        ch2=modAbn.getText();
+        int ch1,ch2;
+        String ch3,ch4,ch5;
+        ch1= Integer.parseInt(modLivre.getText());
+        ch2= Integer.parseInt(modAbn.getText());
         ch3=modEmprDteLim.getValue().toString();
         ch4=modEmprDteLim1.getValue().toString();
-        ch5=modStatusCombo.getValue();
+        ch5= String.valueOf(modStatusCombo.getValue());
         PreparedStatement pst = null;
         try {
 
             pst = con.prepareStatement("INSERT INTO emprunts (idlivre, idab, dateemprt, datalimit, status) VALUES (?,?,?,?,?)");
-            pst.setString(1, ch1);
-            pst.setString(2, ch2);
+            pst.setInt(1, ch1);
+            pst.setInt(2, ch2);
             pst.setString(3, ch3);
             pst.setString(4, ch4);
-            pst.setInt(5, ch5);
+            pst.setString(5, ch5);
             pst.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
