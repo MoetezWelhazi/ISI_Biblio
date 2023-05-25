@@ -327,10 +327,6 @@ public class homeController implements Initializable {
             NPAbonnésClm.setCellValueFactory(f -> f.getValue().nom_prenomProperty());
             SpecAbonnésClm.setCellValueFactory(f -> f.getValue().specialityProperty());
             GroupAbonnésClm.setCellValueFactory(f -> f.getValue().grpProperty());
-
-
-
-
         }
 
         catch (SQLException ex)
