@@ -18,8 +18,9 @@
         <dependency>
             <groupId>io.github.typhon0</groupId>
             <artifactId>AnimateFX</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.3</version>
             <type>pom</type>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

@@ -1,5 +1,6 @@
 package com.example.isi_biblio.controller;
 
+import animatefx.animation.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -715,23 +716,29 @@ public class homeController implements Initializable {
             emptable();
         }
         if(actionEvent.getSource() == optionsAbonnés) {
+            new FadeInLeft(modAbonnés).play();
             modAbonnés.toFront();
         }
         if(actionEvent.getSource() == optionsLivres) {
+            new FadeInLeft(modLivres).play();
             modLivres.toFront();
         }
         if(actionEvent.getSource() == optionsEmprunts) {
+            new FadeInLeft(modEmprunts).play();
             modEmprunts.toFront();
         }
         if(actionEvent.getSource() == toggleOptionsAbn) {
+            new FadeOutLeft(modAbonnés).play();
             modAbonnés.toBack();
             clearAbn();
         }
         if(actionEvent.getSource() == toggleOptionsLiv) {
+            new FadeOutLeft(modLivres).play();
             modLivres.toBack();
             clearLiv();
         }
         if(actionEvent.getSource() == toggleOptionsEmpr) {
+            new FadeOutLeft(modEmprunts).play();
             modEmprunts.toBack();
             clearEmpr();
         }

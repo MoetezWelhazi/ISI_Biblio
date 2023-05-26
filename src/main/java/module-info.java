@@ -1,7 +1,7 @@
 module com.example.isi_biblio {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires animateFX;
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.controlsfx.controls;
