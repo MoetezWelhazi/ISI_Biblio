@@ -18,6 +18,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(fxmlLoader.load()));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("ISI Biblio");
+        primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icons/DGU(v2)_Logo_Dark_NoBG.png")));
         primaryStage.show();
     }

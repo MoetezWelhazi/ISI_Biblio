@@ -729,17 +729,17 @@ public class homeController implements Initializable {
         }
         if(actionEvent.getSource() == toggleOptionsAbn) {
             new FadeOutLeft(modAbonnés).play();
-            modAbonnés.toBack();
+            //modAbonnés.toBack();
             clearAbn();
         }
         if(actionEvent.getSource() == toggleOptionsLiv) {
             new FadeOutLeft(modLivres).play();
-            modLivres.toBack();
+            //modLivres.toBack();
             clearLiv();
         }
         if(actionEvent.getSource() == toggleOptionsEmpr) {
             new FadeOutLeft(modEmprunts).play();
-            modEmprunts.toBack();
+            //modEmprunts.toBack();
             clearEmpr();
         }
     }
